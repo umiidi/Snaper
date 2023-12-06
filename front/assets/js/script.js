@@ -9,6 +9,8 @@ function updateCount() {
     
     if(remainingChars == 255){
         charCount.style.display = "none"
+        snapButton.disabled = false;
+        snapButton.style.backgroundColor = "";
     }else{
         charCount.style.display = "block"
         if (remainingChars < 0) {

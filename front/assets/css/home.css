@@ -1,35 +1,3 @@
-nav{
-    margin-top: 30px;
-    margin-left: 50px;
-}
-.nav-link{
-    border-radius: 50px;
-    width: 250px;
-    margin-bottom: 10px;
-}
-.nav-link:hover{
-    background-color:   rgb(222, 221, 221);
-}
-.nav-link:active{
-    background-color: rgb(193, 188, 188);
-}
-.nav-svg{
-    fill: gray;
-    margin-left: 15px;
-}
-.nav-txt{
-    color: gray;
-    font-size: 150%;
-    position: sticky;
-    margin-top: -5px;
-    margin-left: 15%;
-}
-.btn-snap{
-    width: 300px;
-    border-radius: 50px;
-    background-color: #fcbb1f;
-}
-
 .snap-box {
     display: flex;
 }
@@ -52,7 +20,7 @@ nav{
 }
 .textarea-container textarea {
     width: 100%;
-    height: 100px;
+    height: 80px;
     resize: none;
     border: none;
     outline: none;
@@ -62,10 +30,10 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin: -7px auto;
 }
 .icons i{
-    color:rgb(83, 129, 150);
+    color:brown;
     margin-right: 3px;
     font-size: 25px;
 }
@@ -81,6 +49,13 @@ nav{
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.contents{
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(100vh - 57px);
+    scrollbar-width: thin;
 }
 
 .post-box {
@@ -153,6 +128,10 @@ nav{
 }
 .options-button:hover{
     background-color: rgb(222, 220, 220);
+}
+
+.post-content{
+    margin-top: -10px;
 }
 
 .post-footer {
