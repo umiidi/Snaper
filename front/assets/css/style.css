@@ -1,0 +1,175 @@
+nav{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.nav-link{
+    border-radius: 50px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+.nav-link:hover{
+    background-color:   rgb(222, 221, 221);
+}
+.nav-link:active{
+    background-color: rgb(193, 188, 188);
+}
+.nav-svg{
+    fill: gray;
+    margin-left: 15px;
+}
+.nav-txt{
+    color: gray;
+    font-size: 150%;
+    position: sticky;
+    margin-top: -5px;
+    margin-left: 15%;
+}
+.btn-snap{
+    width: 300px;
+    border-radius: 50px;
+    background-color: #fcbb1f;
+}
+
+.snap-box {
+    display: flex;
+}
+.profile-section{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.profile-section img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.main-section {
+    width: 100%;
+    margin: 20px;
+}
+.textarea-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+.textarea-container textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.icons i{
+    color:rgb(83, 129, 150);
+    margin-right: 3px;
+    font-size: 25px;
+}
+.count, .button {
+    display: flex;
+    align-items: center;
+}
+.snap-button {
+    width: 70px;
+    height: 30px;
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.post-box {
+    display: flex;
+}
+
+.author-image{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.author-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post-main {
+    width: 100%;
+    margin: 20px;
+}
+
+.post-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-author-info{
+    display: flex;
+}
+
+.post-author-info p{
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.post-head-right{
+    margin-top: -10px;
+    display: flex;
+}
+
+.options-dropdown {
+    position: relative;
+    margin-left: 20px;
+}
+
+.options-dropdown-content {
+    width: 100px;
+    border: 50%;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+}
+#optionsDropdown.active .options-dropdown-content {
+    display: block;
+}
+.options-button{
+    text-align: left;
+    width: 100%;
+    border: none;
+    border: 50%;
+    background-color: transparent;
+}
+.options-button:hover{
+    background-color: rgb(222, 220, 220);
+}
+
+.post-footer {
+    padding-top: 10px;
+    padding-right: 100px;
+    display: flex;
+}
+
+.actions{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions i {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
