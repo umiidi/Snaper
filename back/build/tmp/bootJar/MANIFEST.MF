@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Main-Class: org.springframework.boot.loader.JarLauncher
-Start-Class: com.company.snaper.SnaperApplication
+Start-Class: com.company.SnaperApplication
 Spring-Boot-Version: 2.7.17
 Spring-Boot-Classes: BOOT-INF/classes/
 Spring-Boot-Lib: BOOT-INF/lib/
