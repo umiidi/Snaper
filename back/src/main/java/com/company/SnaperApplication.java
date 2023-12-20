@@ -18,7 +18,7 @@ public class SnaperApplication{
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("snaper-app.netlify.com");
+                registry.addMapping("/**").allowedOrigins("https://snaper-app.netlify.app");
             }
         };
     }
