@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api/v1"
+const url = "https://snaper-app.onrender.com/api/v1"
 
 export async function fetchData(path, method, data) {
     const requestOptions = {
