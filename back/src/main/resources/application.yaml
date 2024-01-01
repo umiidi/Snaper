@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    snaper:
+      jdbc-url: "jdbc:mysql://sql12.freesqldatabase.com	:3306/sql12666112"
+      username: "sql12666112"
+      password: "CAtLrvgdc3"
+      type: com.zaxxer.hikari.HikariDataSource
+app:
+  jwt:
+    secret-key: "VGhpcyBteSBzZWNyZXQga2V5IGZvciBBcHBsaWNhdGlvbi4gUGxlYXNlIGNoYW5nZSBpbiBwcm9kdWN0aW"
+    validity-time: 3000000
