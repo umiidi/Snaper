@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../assets/css/snapbox.css">
+</head>
+
+<body>
+
+    <div class="profile-section">
+        <img src="../assets/images/snaper-logo.jpg" alt="Profile Image">
+    </div>
+    <div class="main-section">
+        <div class="textarea-container">
+            <textarea id="snapText" class="border-bottom" oninput=updateCount(this)
+                placeholder="What`s happening?"></textarea>
+        </div>
+        <div class="footer">
+            <div class="icons">
+                <i class="fa-regular fa-face-smile"></i>
+                <i class="fa-regular fa-image"></i>
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div>
+                <span id="charCount" class="count"></span>
+            </div>
+            <div>
+                <button id="snapButton" class="snap-button" onclick=addSnapClick(this)>Snap</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateCount(textarea) {
+            var divFooter = textarea.parentElement.nextElementSibling
+            var charCount = divFooter.querySelector('#charCount');
+            var snapButton = divFooter.querySelector('#snapButton');
+            var remainingChars = 255 - textarea.value.length;
+            charCount.textContent = remainingChars;
+            if (remainingChars == 255) {
+                charCount.style.display = "none"
+                snapButton.disabled = false;
+                snapButton.style.backgroundColor = "";
+            } else {
+                charCount.style.display = "block"
+                if (remainingChars < 0) {
+                    charCount.style.color = "red";
+                    snapButton.disabled = true;
+                    snapButton.style.backgroundColor = "gray";
+                } else {
+                    charCount.style.color = "";
+                    snapButton.disabled = false;
+                    snapButton.style.backgroundColor = "";
+                }
+            }
+        }
+    </script>
+
+    <script type="module">
+        import { addSnap } from '../assets/js/pages/snapbox.js';
+        window.addSnapClick = function (button) {
+            addSnap(button);
+        };
+    </script>
+
+</body>
+
+</html>
