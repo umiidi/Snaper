@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    snaper:
+      jdbc-url: ${JDBC_URL}
+      username: ${USERNAME}
+      password: ${PASSWORD}
+      type: com.zaxxer.hikari.HikariDataSource
+    url:
+app:
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}
+    validity-time: 1800000  # 30minute
