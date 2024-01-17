@@ -1,0 +1,252 @@
+.head{
+    display: flex;
+    align-items: center;
+}
+.head a{
+    margin: auto 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    padding-left: 7px;
+    color: black;
+    padding-top: 3px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    
+}
+.head a:hover{
+    background-color: rgba(238, 238, 238, 0.768);
+}
+
+.contents{
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(100vh - 57px);
+    scrollbar-width: thin;
+    width: 100%;
+}
+
+.post-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.author-image{
+    margin-top: -10px;
+    margin-right: 10px;
+}
+
+.author-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.post-author-info{
+    width: 100%;
+}
+.post-author-info p{
+    margin-top: -10px;
+}
+
+.options-dropdown {
+    position: relative;
+    margin-top: -30px;
+    margin-left: 20px;
+}
+
+.options-dropdown-content {
+    width: 100px;
+    border: 50%;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+}
+
+.options-button{
+    text-align: left;
+    width: 100%;
+    border: none;
+    border-radius: 11%;
+    background-color: transparent;
+}
+.options-button:hover{
+    background-color: rgb(222, 220, 220);
+}
+
+.post-content{
+    width: 95%;
+    margin-top: -5px;
+    margin-left: 5px;
+}
+
+.post-footer {
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 100px;
+}
+
+.post-date{
+    margin: 10px auto;
+}
+
+.footer-hr{
+    display: flex;
+    width: 117%;
+}
+
+.actions{
+    width: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions i {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.liked{
+    color: #3498db;
+}
+
+.comment-box {
+    display: flex;
+    width: 100%;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.profile-section{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.profile-section img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.main-section {
+    width: 100%;
+    margin: 20px;
+}
+.textarea-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+.textarea-container textarea {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -13px auto;
+}
+.icons i{
+    color:brown;
+    margin-right: 3px;
+    font-size: 25px;
+}
+.count, .button {
+    display: flex;
+    align-items: center;
+}
+.comment-button {
+    width: 100%;
+    height: 30px;
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comments{
+    margin-top: 10px;
+    margin-left: -10px;
+    width: 100%;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment-authorimage{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.comment-authorimage img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.comment-body{
+    margin-left: 10px;
+    width: 100%;
+}
+.comment-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.comment-head p {
+    margin-left: 5px;
+    margin-top: 7px;
+}
+.comment-head span{
+    margin-top: -10px;
+    margin-left: 7px;
+    width: 100%;
+}
+
+.comment-options {
+    margin-top: -5px;
+}
+.comment-options-content {
+    width: 100px;
+    border: 50%;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+}
+#commentOptionsDropdown.active .comment-options-content {
+    display: block;
+}
+.comment-options-button{
+    text-align: left;
+    width: 100%;
+    border: none;
+    border: 50%;
+    background-color: transparent;
+}
+.comment-options-button:hover{
+    background-color: rgb(222, 220, 220);
+}
+
+.comment-content{
+    margin-top: -10px;
+}
