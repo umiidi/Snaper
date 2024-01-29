@@ -1,0 +1,18 @@
+.search-container{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 80%;
+    border-radius: 28px;
+    border: 1px solid rgb(238, 238, 238);
+    position: relative;
+    background: rgb(238, 238, 238);
+}
+
+.search-icon{
+    margin: 10px
+}
+.search-input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}

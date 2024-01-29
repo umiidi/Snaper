@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pic2"></div>
+        <img src="assets/images/snaper-logo.jpg" alt="app-logo">
+        <h1>Log in To Continue</h1>
+        <div class="inp">
+            <input type="text" id="username" required>
+            <label for="Username">Username</label>
+        </div>
+        <div class="inp">
+            <input type="password" id="pass">
+            <label for="Password">Password</label>
+        </div>
+
+        <span id="errortxt" style="text-align: center; color: red; display: none;"></span>
+        <!-- <div style="display: flex;"><a href="">Forgot Password?</a></div> -->
+        <button id="submit" type="submit">Login</button>
+        <a href="registration.html">Dont have a account? Sign up</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputs = document.querySelectorAll(".inp input");
+
+            inputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    const label = this.nextElementSibling;
+                    label.classList.toggle("up", this.value.trim() !== "");
+                });
+            });
+        });
+    </script>
+
+    <script type=module src="assets/js/pages/login.js"></script>
+
+</body>

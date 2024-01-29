@@ -1,0 +1,171 @@
+.head{
+    display: flex;
+    align-items: center;
+}
+
+.head a{
+    margin: auto 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    padding-left: 7px;
+    color: black;
+    padding-top: 3px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    
+}
+.head a:hover{
+    background-color: rgba(238, 238, 238, 0.768);
+}
+
+.contents{
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(100vh - 57px);
+    scrollbar-width: thin;
+    width: 100%;
+}
+
+.user-info-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-info{
+    margin: 10px;
+}
+.user-info h4{
+    margin-top: -5px;
+}
+
+.user-info-main img{
+    margin-right: 15px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.main-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.edit-profile{
+    display: flex;
+    align-items: center;
+}
+.edit-profile i{
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;    
+
+}
+.edit-profile i:hover{
+    background-color: rgba(238, 238, 238, 0.768);   
+}
+
+.snaps-container{
+    width: 100%;
+
+}
+.snaps-container h3{
+    text-align: center;
+}
+
+.snap-box {
+    display: flex;
+}
+
+.author-image{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.author-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.snap-main {
+    width: 100%;
+    margin: 20px;
+}
+
+.snap-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.snap-author-info{
+    display: flex;
+}
+
+.snap-author-info p{
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.snap-head-right{
+    margin-top: -10px;
+    display: flex;
+}
+
+.options-dropdown {
+    position: relative;
+    margin-left: 20px;
+}
+
+.options-dropdown-content {
+    width: 100px;
+    border: 50%;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+}
+#optionsDropdown.active .options-dropdown-content {
+    display: block;
+}
+.options-button{
+    text-align: left;
+    width: 100%;
+    border: none;
+    border: 50%;
+    background-color: transparent;
+}
+.options-button:hover{
+    background-color: rgb(222, 220, 220);
+}
+
+.snap-content{
+    margin-top: -10px;
+}
+
+.snap-footer {
+    padding-top: 10px;
+    padding-right: 100px;
+    display: flex;
+}
+
+.actions{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions i {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

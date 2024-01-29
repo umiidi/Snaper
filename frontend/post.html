@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/snaper-logo.jpg">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/post.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!--JS-->
+    <script src="assets/js/scripts/script.js"> </script>
+    <script src="./assets/js/pages/post.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <title>Post</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-3" id="sidebar"></div>
+
+            <div class="col-md-6">
+
+                <div class="border-left border-right">
+
+                    <div class="head border-bottom">
+                        <a href="home.html">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <h2 class="text-center">Post</h2>
+                    </div>
+
+                    <div class="contents">
+
+                        <div class="post-box" id="postbox">
+                            
+                            <div id="spinnerPost" class="spinner"
+                                style="margin-top: 15px; display: flex; justify-content: center;">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="comment-box">
+                            <div class="profile-section">
+                                <img src="assets/images/snaper-logo.jpg" alt="Profile Image">
+                            </div>
+                            <div class="main-section">
+                                <div class="textarea-container">
+                                    <textarea id="commentText" class="border-bottom" oninput=updateCountComment(this)
+                                        placeholder="Post your comment"></textarea>
+                                </div>
+                                <div class="footer">
+                                    <div class="icons">
+                                        <i class="fa-regular fa-face-smile"></i>
+                                    </div>
+                                    <div>
+                                        <span id="charCount" class="count"></span>
+                                    </div>
+                                    <div>
+                                        <button id="commentButton" class="comment-button"
+                                            onclick=addCommentClick(this)>Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comments" id="comments">
+
+                            <div id="spinnerComments" class="spinner"
+                                style="margin-top: 15px; display: flex; justify-content: center;">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="search-container" id="search"></div>
+                <div class="suggested-container" id="suggested"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadFragment("sidebar", "sidebar.html")
+            loadFragment("search", "search.html")
+            loadFragment("suggested", "suggested.html")
+        });
+    </script>
+
+    <script>
+        function updateCountComment(textarea) {
+            var divFooter = textarea.parentElement.nextElementSibling
+            var charCount = divFooter.querySelector('#charCount');
+            var commentButton = divFooter.querySelector('#commentButton');
+            var remainingChars = 255 - textarea.value.length;
+            charCount.textContent = remainingChars;
+            if (remainingChars == 255) {
+                charCount.style.display = "none"
+                commentButton.disabled = false;
+                commentButton.style.backgroundColor = "";
+            } else {
+                charCount.style.display = "block"
+                if (remainingChars < 0) {
+                    charCount.style.color = "red";
+                    commentButton.disabled = true;
+                    commentButton.style.backgroundColor = "gray";
+                } else {
+                    charCount.style.color = "";
+                    commentButton.disabled = false;
+                    commentButton.style.backgroundColor = "";
+                }
+            }
+        }
+    </script>
+
+    <script>
+
+        function postOption() {
+            allDropdownContentClose()
+            var optionsDropdown = document.getElementById("postOptionsDropdown");
+            var contentElement = optionsDropdown.querySelector(".options-dropdown-content");
+            if (contentElement.classList.contains("visible")) {
+                contentElement.classList.remove("visible");
+                contentElement.style.display = "none";
+            }else{
+                contentElement.classList.add("visible");
+                contentElement.style.display = "block";
+            }
+
+        }
+
+        function commentOption(commentId) {
+            allDropdownContentClose()
+            var optionsDropdown = document.getElementById(`commentOptionsDropdownBy${commentId}`);
+            var contentElement = optionsDropdown.querySelector(".options-dropdown-content");
+            if (contentElement.classList.contains("visible")) {
+                contentElement.classList.remove("visible");
+                contentElement.style.display = "none";
+            }else{
+                contentElement.classList.add("visible");
+                contentElement.style.display = "block";
+            }
+        }
+
+        function allDropdownContentClose() {
+            var dropdownContents = document.getElementsByClassName("options-dropdown-content");
+            for (var i = 0; i < dropdownContents.length; i++) {
+                dropdownContents[i].style.display = "none";
+            }
+
+        }
+
+    </script>
+
+    <script type="module">
+        import { editPost } from './assets/js/pages/post.js';
+        window.editPostClick = function (button) {
+            $('#UpdatePostManualModal').modal('hide');
+            editPost(button)
+        }
+    </script>
+
+    <script type="module">
+        import { deletePost } from './assets/js/pages/post.js';
+        window.deletePostClick = function (postId) {
+            deletePost(postId)
+        }
+    </script>
+
+    <script type="module">
+        import { deleteComment } from './assets/js/pages/post.js';
+        window.deleteCommentClick = function (commentId) {
+            deleteComment(commentId)
+        }
+    </script>
+
+    <script type="module">
+        import { likePost, unlikePost } from './assets/js/pages/post.js';
+
+        window.like = function (postId) {
+            var icon = document.getElementById(`like`);
+            var iconSolid = "fa-solid";
+            var liked = "liked";
+            var iconRegular = "fa-regular";
+            if (icon.classList.contains(iconSolid)) {
+                unlikePost(postId)
+                icon.classList.remove(iconSolid)
+                icon.classList.remove(liked)
+                icon.classList.add(iconRegular)
+            } else {
+                likePost(postId)
+                icon.classList.remove(iconRegular)
+                icon.classList.add(iconSolid)
+                icon.classList.add(liked)
+            }
+        };
+    </script>
+
+    <script type="module">
+        import { addCommentToPost } from '../assets/js/pages/post.js';
+        window.addCommentClick = function (button) {
+            addCommentToPost(button);
+        };
+    </script>
+
+</body>
+
+</html>
