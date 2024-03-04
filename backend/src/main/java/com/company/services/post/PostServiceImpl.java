@@ -107,7 +107,7 @@ public class PostServiceImpl implements PostService {
 
     private boolean isAllowed(int userId) {
         User auth = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return auth.getAuthority() == Authority.ADMIN || auth.getId() == userId;
+        return auth.getAuthority() == Authority.ADMIN || auth.getId() == postRepo.getUserId(postId);
     }
 
 }
